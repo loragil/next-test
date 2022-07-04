@@ -22,13 +22,49 @@ header .logo img {
 /* CONTENT */
 .content {
     grid-area: content;
-    padding: 0 14.4rem;
     height: 100%;
 }
 
 /* FOOTER */
 footer {
     grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 4rem;
+    background-color: #231F20;
+    color: #fff;
+}
+
+footer .logo {
+    width: 40px;
+    height: 40px;
+}
+
+footer .contact-us {
+    font-family: 'Georgia';
+    margin-top: 2.7rem;
+    font-size: 3.3rem;
+}
+
+footer .info {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+footer .info .email,
+footer .info .hours {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 2.1rem;
+}
+
+footer .social {
+    width: 23rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3.8rem;
 }
 
 /*# sourceMappingURL=app.component.css.map */

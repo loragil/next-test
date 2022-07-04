@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-// @import "styles/partials/colors.scss";
+@import "styles/partials/globals.scss";
+@import "styles/partials/colors.scss";
 
 html,
 body {
@@ -7,4 +8,22 @@ body {
     margin: 0;
     // background-color: $light-blue;
     font-size: 62.5%; //Body font-size = (62.5/100)*16 = 10px; [16 as deault font size in most browsers]
+
+    a {
+        color: inherit;
+        // text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0
+    }
+}
+
+router-outlet + * {
+    padding: 0 $app-padding;
 }

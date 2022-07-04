@@ -6,4 +6,28 @@ body {
     font-size: 62.5%;
 }
 
+html a,
+body a {
+    color: inherit;
+}
+
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+    margin: 0;
+}
+
+router-outlet + * {
+    padding: 0 14.4rem;
+}
+
 /*# sourceMappingURL=styles.css.map */
