@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.nxt-icon {
+    display: inline-block;
+}
+
+.nxt-icon.fb {
+    width: 11px;
+    height: 19px;
+    background-image: url("/assets/icons/social/fb.svg");
+}
+
 html,
 body {
     height: 100%;
@@ -28,6 +38,13 @@ body h6 {
 
 router-outlet + * {
     padding: 0 14.4rem;
+}
+
+.nxt-btn {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "styles/partials/globals.scss";
 @import "styles/partials/colors.scss";
+@import "styles/partials/icons.scss";
+
 
 html,
 body {
@@ -26,4 +28,11 @@ body {
 
 router-outlet + * {
     padding: 0 $app-padding;
+}
+
+.nxt-btn {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
 }

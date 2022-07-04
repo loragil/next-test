@@ -1,0 +1,34 @@
+.nxt-icon {
+    display: inline-block;
+    cursor: pointer;
+
+    &.fb {
+        width: 11px;
+        height: 19px;
+        background-image: url('../../assets/icons/social/fb.svg');
+    }
+
+    &.lnkd {
+        width: 16px;
+        height: 16px;
+        background-image: url('../../assets/icons/social/lnkd.svg');
+    }
+
+    &.twt {
+        width: 20px;
+        height: 16px;
+        background-image: url('../../assets/icons/social/twt.svg');
+    }
+
+    &.ig {
+        width: 19px;
+        height: 19px;
+        background-image: url('../../assets/icons/social/ig.svg');
+    }
+
+    &.yt {
+        width: 21px;
+        height: 15px;
+        background-image: url('../../assets/icons/social/yt.svg');
+    }
+}
