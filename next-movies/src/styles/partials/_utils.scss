@@ -1,1 +1,6 @@
-
+@mixin row-ellipsis($row-limit: 3) {
+    display: -webkit-box;
+    -webkit-line-clamp: $row-limit;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

@@ -56,6 +56,7 @@ body {
     font-size: 62.5%;
     font-family: "Arial";
     color: #000;
+    overflow-x: hidden;
 }
 
 html a,
@@ -82,6 +83,7 @@ router-outlet + * > div:first-child {
     padding: 0 14.2rem;
 }
 
+/** NEXT APP STYLES **/
 .nxt-btn {
     appearance: none;
     background: transparent;
@@ -100,6 +102,13 @@ router-outlet + * > div:first-child {
 
 .nxt-btn:hover {
     transform: scale(1.05);
+}
+
+.row-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */
