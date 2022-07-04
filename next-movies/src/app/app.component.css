@@ -1,14 +1,15 @@
 :host {
     display: grid;
+    height: 100%;
     grid-template-areas: 'header' 'content' 'footer';
-    grid-template-rows: 123px 1fr 300px;
+    grid-template-rows: 12.3rem 1fr 30rem;
 }
 
 /* HEADER */
 header {
     grid-area: header;
     background-color: #fff;
-    padding: 0 144px;
+    padding: 0 14.4rem;
     display: flex;
     align-items: center;
 }
@@ -21,8 +22,7 @@ header .logo img {
 /* CONTENT */
 .content {
     grid-area: content;
-    background-color: green;
-    padding: 0 144px;
+    padding: 0 14.4rem;
     height: 100%;
 }
 
