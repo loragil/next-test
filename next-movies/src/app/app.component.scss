@@ -4,6 +4,7 @@
 
 :host {
     display: grid;
+    height: 100%;
     grid-template-areas: 'header'
                         'content'
                         'footer';
@@ -27,7 +28,6 @@ header {
 /* CONTENT */
 .content {
     grid-area: content;
-    background-color: green;
     padding: 0 $app-padding;
     height: 100%;
 }
