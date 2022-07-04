@@ -1,12 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 .nxt-icon {
     display: inline-block;
+    cursor: pointer;
+    /* SOCIAL */
+    /* RATING */
+    /* ARROW */
 }
 
 .nxt-icon.fb {
     width: 11px;
     height: 19px;
-    background-image: url("/assets/icons/social/fb.svg");
+    background-image: url("../../assets/icons/social/fb.svg");
+}
+
+.nxt-icon.lnkd {
+    width: 16px;
+    height: 16px;
+    background-image: url("../../assets/icons/social/lnkd.svg");
+}
+
+.nxt-icon.twt {
+    width: 20px;
+    height: 16px;
+    background-image: url("../../assets/icons/social/twt.svg");
+}
+
+.nxt-icon.ig {
+    width: 19px;
+    height: 19px;
+    background-image: url("../../assets/icons/social/ig.svg");
+}
+
+.nxt-icon.yt {
+    width: 21px;
+    height: 15px;
+    background-image: url("../../assets/icons/social/yt.svg");
+}
+
+.nxt-icon.star {
+    width: 35px;
+    height: 33px;
+    background-image: url("../../assets/icons/star.svg");
+}
+
+.nxt-icon.arrow {
+    width: 25px;
+    height: 14px;
+    background-image: url("../../assets/icons/arrow.svg");
 }
 
 html,
@@ -14,6 +54,8 @@ body {
     height: 100%;
     margin: 0;
     font-size: 62.5%;
+    font-family: "Arial";
+    color: #000;
 }
 
 html a,
@@ -36,8 +78,8 @@ body h6 {
     margin: 0;
 }
 
-router-outlet + * {
-    padding: 0 14.4rem;
+router-outlet + * > div:first-child {
+    padding: 0 14.2rem;
 }
 
 .nxt-btn {
@@ -45,6 +87,19 @@ router-outlet + * {
     background: transparent;
     border: 0;
     padding: 0;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.nxt-btn.outline {
+    border: 1px solid #000;
+    background-color: transparent;
+    border-radius: 100px;
+    padding: 0 1.9rem;
+}
+
+.nxt-btn:hover {
+    transform: scale(1.05);
 }
 
 /*# sourceMappingURL=styles.css.map */

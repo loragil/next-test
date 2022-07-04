@@ -2,6 +2,7 @@
     display: inline-block;
     cursor: pointer;
 
+    /* SOCIAL */
     &.fb {
         width: 11px;
         height: 19px;
@@ -30,5 +31,19 @@
         width: 21px;
         height: 15px;
         background-image: url('../../assets/icons/social/yt.svg');
+    }
+
+    /* RATING */
+    &.star {
+        width: 35px;
+        height: 33px;
+        background-image: url('../../assets/icons/star.svg');
+    }
+
+    /* ARROW */
+    &.arrow {
+        width: 25px;
+        height: 14px;
+        background-image: url('../../assets/icons/arrow.svg');
     }
 }

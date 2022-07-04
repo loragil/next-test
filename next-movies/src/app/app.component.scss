@@ -1,5 +1,5 @@
-@import "../styles/partials/globals.scss";
-@import "../styles/partials/colors.scss";
+@import "./src/styles/partials/globals.scss";
+@import "./src/styles/partials/colors.scss";
 
 
 :host {
@@ -14,7 +14,7 @@
 /* HEADER */
 header {
     grid-area: header;
-    background-color: $white;
+    background-color: $color-white;
     padding: 0 $app-padding;
     display: flex;
     align-items: center;
@@ -40,8 +40,8 @@ footer {
     justify-content: flex-start;
     align-items: center;
     padding-top: 4rem;
-    background-color: $dark-gray;
-    color: $white;
+    background-color: $color-dark-gray;
+    color: $color-white;
 
     .logo {
         width: 40px;
@@ -49,7 +49,7 @@ footer {
     }
 
     .contact-us {
-        font-family: 'Georgia';
+        font-family: $font-family-2;
         margin-top: 2.7rem;
         font-size: 3.3rem;
     }

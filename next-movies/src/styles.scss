@@ -2,18 +2,19 @@
 @import "styles/partials/globals.scss";
 @import "styles/partials/colors.scss";
 @import "styles/partials/icons.scss";
-
+ @import "styles/partials/animations.scss";
 
 html,
 body {
     height: 100%;
     margin: 0;
-    // background-color: $light-blue;
     font-size: 62.5%; //Body font-size = (62.5/100)*16 = 10px; [16 as deault font size in most browsers]
+
+    font-family: $font-family-1;
+    color: $color-black;
 
     a {
         color: inherit;
-        // text-decoration: none;
     }
 
     h1,
@@ -26,7 +27,7 @@ body {
     }
 }
 
-router-outlet + * {
+router-outlet + * > div:first-child {
     padding: 0 $app-padding;
 }
 
@@ -35,4 +36,17 @@ router-outlet + * {
     background: transparent;
     border: 0;
     padding: 0;
+    cursor: pointer;
+    transition: $anim-transition;
+
+    &.outline {
+        border: 1px solid $color-black;
+        background-color: transparent;
+        border-radius: 100px;
+        padding: 0 1.9rem;
+    }
+
+    &:hover {
+        @include animation-pop();
+    }
 }
