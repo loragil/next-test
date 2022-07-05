@@ -1,7 +1,7 @@
-@import "./src/styles/partials/colors.scss";
+@import "/src/styles/partials/colors.scss";
 @import "./src/styles/partials/globals.scss";
 @import "./src/styles/partials/utils.scss";
-
+@import "./src/styles/partials/placeholders.scss";
 
 .home {
     height: 100%;
@@ -36,11 +36,7 @@
 
         .img {
             height: 385px;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
+            @extend %img-spread;
         }
 
         .title {
@@ -52,21 +48,8 @@
         }
 
         .rating {
+            @extend %rating;
             margin-top: 2rem;
-            display: flex;
-            font-family: $font-family-1;
-            font-size: 2.5rem;
-            align-items: center;
-
-            i {
-                display: inline-block;
-                margin-right: 0.7rem;
-            }
-
-            .star {
-                width: 2.8rem;
-                height: 2.7rem;
-            }
         }
 
         .read-more {

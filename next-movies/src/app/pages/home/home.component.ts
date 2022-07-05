@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Movie} from "../../shared/models/movie";
 import {BsModalRef, BsModalService, ModalOptions} from "ngx-bootstrap/modal";
 import {MovieInfoPopupComponent} from "../../shared/popups/movie-info-popup/movie-info-popup.component";
+import {ngbModalOptions} from "../../shared/models/app-config.model";
 
 @Component({
     selector: 'app-home',
@@ -1420,13 +1421,12 @@ export class HomeComponent implements OnInit {
         // console.table(this.movies);
     }
 
-    displayMovieInfo() {
+    displayMovieInfo(movie: Movie) {
         const initialState: ModalOptions = {
-            initialState: {
-                title: 'Modal with component'
-            }
+            ...ngbModalOptions,
         };
-        this.modalRef = this.modalService.show(MovieInfoPopupComponent, initialState);
-        // this.modalRef.content.closeBtnName = 'Close';
+
+        this.modalRef = this.modalService.show(MovieInfoPopupComponent, ngbModalOptions);
+        this.modalRef.content.movie = movie;
     }
 }

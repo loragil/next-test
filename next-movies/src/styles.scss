@@ -47,6 +47,11 @@ router-outlet + * > div:first-child {
     border: 0;
     padding: 0;
     cursor: pointer;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
     transition: $anim-transition;
 
     &.outline {
@@ -63,4 +68,8 @@ router-outlet + * > div:first-child {
 
 .row-ellipsis {
     @include row-ellipsis();
+}
+
+.ellipsis {
+    @include ellipsis();
 }

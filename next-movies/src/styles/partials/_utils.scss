@@ -4,3 +4,11 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+@mixin ellipsis($width: auto) {
+    max-width: 100%;
+    width: $width;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

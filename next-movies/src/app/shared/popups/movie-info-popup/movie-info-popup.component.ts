@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BsModalRef} from "ngx-bootstrap/modal";
+import {Movie} from "../../models/movie";
 
 @Component({
     selector: 'app-movie-info-popup',
@@ -7,9 +8,9 @@ import {BsModalRef} from "ngx-bootstrap/modal";
     styleUrls: ['./movie-info-popup.component.scss']
 })
 export class MovieInfoPopupComponent implements OnInit {
-    title?: string;
+    public movie?: Movie;
 
-    constructor(public bsModalRef: BsModalRef) {
+    constructor(public modalRef: BsModalRef) {
     }
 
     ngOnInit(): void {
