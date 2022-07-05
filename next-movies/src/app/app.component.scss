@@ -8,7 +8,7 @@
     grid-template-areas: 'header'
     'content'
     'footer';
-    grid-template-rows: $header-height 1fr $footer-height;
+    grid-template-rows: 12.3rem 1fr 30rem;
 }
 
 /* HEADER */

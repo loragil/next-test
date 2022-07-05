@@ -80,7 +80,7 @@ body h6 {
 }
 
 router-outlet + * > div:first-child {
-    padding: 0 14.2rem;
+    padding: 0 13.4rem;
 }
 
 /** NEXT APP STYLES **/
