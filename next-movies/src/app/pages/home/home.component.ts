@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Movie} from "../../shared/models/movie";
+import {BsModalRef, BsModalService, ModalOptions} from "ngx-bootstrap/modal";
+import {MovieInfoPopupComponent} from "../../shared/popups/movie-info-popup/movie-info-popup.component";
 
 @Component({
     selector: 'app-home',
@@ -7,9 +9,10 @@ import {Movie} from "../../shared/models/movie";
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    modalRef?: BsModalRef;
     public movies: Movie[] = [];
 
-    constructor() { }
+    constructor(private modalService: BsModalService) { }
 
     ngOnInit(): void {
         this.movies = [
@@ -1417,4 +1420,13 @@ export class HomeComponent implements OnInit {
         // console.table(this.movies);
     }
 
+    displayMovieInfo() {
+        const initialState: ModalOptions = {
+            initialState: {
+                title: 'Modal with component'
+            }
+        };
+        this.modalRef = this.modalService.show(MovieInfoPopupComponent, initialState);
+        // this.modalRef.content.closeBtnName = 'Close';
+    }
 }
