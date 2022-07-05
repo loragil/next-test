@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Movie} from "../../shared/models/movie";
 
 @Component({
     selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    public movies:any[] = [];
+    public movies: Movie[] = [];
 
     constructor() { }
 
@@ -1413,6 +1414,7 @@ export class HomeComponent implements OnInit {
                 "download": "0"
             }
         ]
+        // console.table(this.movies);
     }
 
 }

@@ -1,3 +1,6 @@
+@import "colors";
+
+
 // APP
 // $app-padding: 14.2rem;
 $app-padding: 13.4rem;
@@ -5,6 +8,9 @@ $app-padding: 13.4rem;
 // FONTS
 $font-family-1: 'Arial';
 $font-family-2: 'Georgia';
+
+// TEXT
+$text-color: $color-black;
 
 // ANIMATION
 $anim-transition: .4s ease-in-out;

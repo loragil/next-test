@@ -1,19 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import "styles/partials/globals.scss";
-@import "styles/partials/colors.scss";
-@import "styles/partials/icons.scss";
- @import "styles/partials/animations.scss";
- @import "styles/partials/utils.scss";
+@import "./styles/partials/_globals.scss";
+@import "./styles/partials/_colors.scss";
+@import "./styles/partials/_icons.scss";
+ @import "./styles/partials/_animations.scss";
+ @import "./styles/partials/_utils.scss";
 
 html,
 body {
     height: 100%;
     margin: 0;
-    font-size: 62.5%; //Body font-size = (62.5/100)*16 = 10px; [16 as deault font size in most browsers]
-
+    font-size: 62.5%; /*Body font-size = (62.5/100)*16 = 10px; [16 as default font size in most browsers]*/
     font-family: $font-family-1;
-    color: $color-black;
-
+    color: $text-color;
     overflow-x: hidden;
 
     a {
