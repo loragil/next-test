@@ -4,7 +4,7 @@
         Movies and tv shows
     </h1>
 
-    <div class="movies-list">
+    <div class="movies-list" *ngIf="(movieService.movies$ | async)?.length; else noResults">
         <div *ngFor="let m of movieService.movies$ | async" class="movie">
             <div class="img">
                 <img src="{{m.image}}" alt="{{m.title}}">
@@ -20,4 +20,13 @@
             </button>
         </div>
     </div>
+
+    <ng-template #noResults>
+        <div class="no-results" [hidden]="(movieService.movies$ | async)?.length">
+            <span>
+                Sorry, we couldn't find any movies matching your search. <br>
+                Please try searching for something else..
+            </span>
+        </div>
+    </ng-template>
 </div>

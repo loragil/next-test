@@ -73,3 +73,10 @@ router-outlet + * > div:first-child {
 .ellipsis {
     @include ellipsis();
 }
+
+.no-results {
+    font-size: 3rem;
+    display: grid;
+    place-content: center;
+    margin-top: 7.5rem;
+}
