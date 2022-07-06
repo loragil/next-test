@@ -1,70 +1,17 @@
-:host {
-    display: grid;
-    height: 100%;
-    grid-template-areas: 'header' 'content' 'footer';
-    grid-template-rows: 12.3rem 1fr 30rem;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "./src/styles/partials/globals.scss";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   app.component.scss 1:9  root stylesheet */
 
-/* HEADER */
-header {
-    grid-area: header;
-    background-color: #fff;
-    padding: 0 14.4rem;
-    display: flex;
-    align-items: center;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./src/styles/partials/globals.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   app.component.scss 1:9  root stylesheet";
 }
-
-header .logo img {
-    width: 260px;
-    height: 81px;
-}
-
-/* CONTENT */
-.content {
-    grid-area: content;
-    height: 100%;
-}
-
-/* FOOTER */
-footer {
-    grid-area: footer;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 4rem;
-    background-color: #231F20;
-    color: #fff;
-}
-
-footer .logo {
-    width: 40px;
-    height: 40px;
-}
-
-footer .contact-us {
-    font-family: 'Georgia';
-    margin-top: 2.7rem;
-    font-size: 3.3rem;
-}
-
-footer .info {
-    text-align: center;
-    margin-top: 1.5rem;
-}
-
-footer .info .email,
-footer .info .hours {
-    font-size: 1.6rem;
-    text-align: center;
-    line-height: 2.1rem;
-}
-
-footer .social {
-    width: 23rem;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 3.8rem;
-}
-
-/*# sourceMappingURL=app.component.css.map */

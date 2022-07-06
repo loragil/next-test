@@ -9,9 +9,10 @@ import {environment} from "../../../environments/environment";
     providedIn: 'root'
 })
 export class MovieService {
-    apiURL: string = environment.apiURL
-    public movies: Movie[] = [];
-    public selectedMovie$? = new BehaviorSubject<Movie | null>(null);
+    apiURL: string = environment.apiURL;
+    private _movies: Movie[] = [];
+    public movies$ = new BehaviorSubject<Movie[]>([]);
+    public selectedMovie$ = new BehaviorSubject<Movie | null>(null);
 
     constructor(private httpClient: HttpClient) {
         this.fetchMovies();
@@ -22,12 +23,25 @@ export class MovieService {
     }
 
     getMovie(id: string): Observable<Movie[]> {
-        return this.httpClient.get<any>(`${this.apiURL}/${id}`);
+        return this.httpClient.get<any>(`${this.apiURL}/${id}`, {params: {id}});
     }
 
-    private fetchMovies() {
+    searchMovies(searchTerm: string): void {
+        if (searchTerm !== '') {
+            const filteredMovies: Movie[] = this._movies.filter((m: Movie) => {
+                const regExp = new RegExp(`.*${searchTerm}.*`, 'gi');
+                return m.title.match(regExp) || m.released.match(regExp);
+            });
+            this.movies$.next(filteredMovies);
+        } else {
+            this.movies$.next(this._movies);
+        }
+    }
+
+    private fetchMovies(): void {
         this.getAll().subscribe((movies: Movie[]) => {
-            this.movies = movies;
+            this._movies = movies;
+            this.movies$.next(movies);
         });
     }
 }

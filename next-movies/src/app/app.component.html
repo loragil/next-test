@@ -1,7 +1,14 @@
 <!-- HEADER -->
 <header>
+    <!-- LOGO -->
     <div class="logo">
         <img alt="Next Logo" src="./assets/img/Logo2.png"/>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search">
+        <input #search type="text" class="form-control" placeholder="Search for a title or year released"
+               (keyup)="updateSearch(search.value)">
     </div>
 </header>
 

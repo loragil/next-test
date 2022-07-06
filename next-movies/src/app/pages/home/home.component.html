@@ -5,8 +5,7 @@
     </h1>
 
     <div class="movies-list">
-
-        <div *ngFor="let m of movieService.movies" class="movie">
+        <div *ngFor="let m of movieService.movies$ | async" class="movie">
             <div class="img">
                 <img src="{{m.image}}" alt="{{m.title}}">
             </div>
