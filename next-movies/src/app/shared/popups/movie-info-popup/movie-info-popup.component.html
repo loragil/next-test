@@ -11,7 +11,7 @@
             <div class="score">{{movie?.rating}}/10</div>
         </div>
         <div class="synopsis" [innerHTML]="movie?.synopsis"></div>
-        <button class="nxt-btn outline back" (click)="modalRef.hide()">
+        <button class="nxt-btn outline back" (click)="close()">
             <i class="nxt-icon arrow left"></i>
             <span>Back to list</span>
         </button>
