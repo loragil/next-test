@@ -5,7 +5,7 @@ import {MovieInfoPopupComponent} from "../../shared/popups/movie-info-popup/movi
 import {ngbModalOptions} from "../../shared/models/app-config.model";
 import {MovieService} from "../../shared/services/movie.service";
 import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
     selector: 'app-home',
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
     constructor(public movieService: MovieService,
                 private http: HttpClient,
                 private activatedRoute: ActivatedRoute,
+                private router: Router,
                 private modalService: BsModalService) {
     }
 
@@ -37,6 +38,10 @@ export class HomeComponent implements OnInit {
                             this.movieService.selectedMovie$?.next(movie);
                             this.modalRef = this.modalService.show(MovieInfoPopupComponent, ngbModalOptions);
                             this.modalRef.content.movie = movie;
+
+                            this.modalRef.onHidden?.subscribe(() => {
+                                this.router.navigate(['/home']);
+                            })
                         }
                     });
             }
@@ -44,8 +49,7 @@ export class HomeComponent implements OnInit {
     }
 
     displayMovieInfo(movie: Movie) {
-        this.modalRef = this.modalService.show(MovieInfoPopupComponent, ngbModalOptions);
-        this.modalRef.content.movie = movie;
+        this.router.navigate(['/home', movie.id]);
         this.movieService.selectedMovie$?.next(movie);
     }
 }
