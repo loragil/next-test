@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## REF Links
 * https://ngx-scrollbar.netlify.app/
+* https://github.com/tastejs/angular-movies/blob/main/projects/movies
