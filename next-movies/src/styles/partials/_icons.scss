@@ -50,4 +50,11 @@
             transform: rotateZ(180deg);
         }
     }
+
+    /* SEARCH */
+    &.search {
+        width: 28px;
+        height: 28px;
+        background-image: url('../../assets/icons/search.svg');
+    }
 }

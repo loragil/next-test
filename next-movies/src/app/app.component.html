@@ -2,11 +2,14 @@
 <header>
     <!-- LOGO -->
     <div class="logo">
-        <img alt="Next Logo" src="./assets/img/Logo2.png"/>
+        <a href="/">
+            <img alt="Next Logo" src="./assets/img/Logo2.png"/>
+        </a>
     </div>
 
     <!-- SEARCH -->
-    <div class="search">
+    <div class="search-wrapper">
+        <i class="nxt-icon search"></i>
         <input #search type="text" class="form-control" placeholder="Search for a title or year released"
                (keyup)="updateSearch(search.value)">
     </div>
