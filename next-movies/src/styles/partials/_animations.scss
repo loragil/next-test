@@ -1,3 +1,24 @@
+// STATIC
+
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+// DYNAMIC
+
 @mixin animation-pop($scale: 1.05) {
     transform: scale($scale);
+}
+
+@mixin animation-fade($animation-duration: 0.7s, $animation-name: animate-fade, $animation-delay: 0s, $animation-fill-mode: forwards) {
+    animation-duration: $animation-duration;
+    animation-name: $animation-name;
+    animation-delay: $animation-delay;
+    animation-fill-mode: $animation-fill-mode;
 }

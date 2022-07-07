@@ -79,4 +79,5 @@ router-outlet + * > div:first-child {
     display: grid;
     place-content: center;
     margin-top: 7.5rem;
+    @include animation-fade();
 }

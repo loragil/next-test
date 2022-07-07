@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * https://ngx-scrollbar.netlify.app/
 * https://github.com/tastejs/angular-movies/blob/main/projects/movies
 * https://github.com/bhaikaju/netflix-clone/blob/master/src/app/app.component.ts
+* https://angular-movies-a12d3.web.app/list/category/top_rated
