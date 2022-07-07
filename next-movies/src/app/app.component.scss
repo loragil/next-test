@@ -25,25 +25,8 @@ header {
     }
 
     .search-wrapper {
-        position: relative;
         width: 45rem;
-        height: 40%;
-        display: flex;
         margin-left: auto;
-
-        input {
-            border-radius: 30px;
-            padding-left: 2.5rem;
-            padding-right: 4.5rem;
-        }
-
-        .search {
-            position: absolute;
-            right: 2.5rem;
-            top: 50%;
-            transform: translate(50%, -50%);
-            cursor: default;
-        }
     }
 }
 

@@ -6,6 +6,7 @@ import {HomeModule} from './pages/home/home.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BsModalService} from "ngx-bootstrap/modal";
 import {HttpClientModule} from "@angular/common/http";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from "@angular/common/http";
         AppRoutingModule,
         HttpClientModule,
         HomeModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        SharedModule
     ],
     providers: [BsModalService],
     bootstrap: [AppComponent]
