@@ -2,3 +2,6 @@
 <i class="nxt-icon search"></i>
 <input #search type="text" class="form-control" placeholder="Search for a title or year released"
        (keyup)="updateSearch(search.value)">
+<div class="total">
+    <b>{{(movieService.movies$ | async)?.length}}</b> results found
+</div>
