@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {BsModalRef} from "ngx-bootstrap/modal";
 import {Movie} from "../../models/movie";
 import {MovieService} from "../../services/movie.service";
+import {MovieDisplay} from "../../components/movie/movie.component";
 
 @Component({
     selector: 'app-movie-info-popup',
@@ -10,17 +10,12 @@ import {MovieService} from "../../services/movie.service";
 })
 export class MovieInfoPopupComponent implements OnInit {
     public movie?: Movie;
+    MovieDisplay = MovieDisplay;
 
     constructor(public movieService: MovieService,
-                public modalRef: BsModalRef) {
+    ) {
     }
 
     ngOnInit(): void {
     }
-
-    close(): void {
-        this.modalRef.hide();
-        this.movieService.selectedMovie$?.next(null);
-    }
-
 }

@@ -1,57 +1,6 @@
-@import "./src/styles/partials/globals.scss";
-@import "./src/styles/partials/placeholders";
-
 .app-movie-info-popup {
     min-width: 136rem;
     height: 69rem;
     padding: 5rem 14rem;
     display: flex;
-
-    .info {
-        margin-left: 14.3rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .img {
-        width: 100%;
-        height: 59rem;
-        min-width: 40rem;
-
-        @extend %img-spread;
-    }
-
-    .title {
-        text-transform: uppercase;
-        font-size: 4.5rem;
-    }
-
-    .duration {
-        margin-top: 1rem;
-        font-size: 2.5rem;
-    }
-
-    .rating {
-        @extend %rating;
-        margin-top: 2.4rem;
-    }
-
-    .score {
-        margin-left: 0.3rem;
-        font-size: 2.5rem;
-    }
-
-    .synopsis {
-        margin: 2.8rem 0;
-        font-size: 3rem;
-        font-family: $font-family-2;
-        flex-grow: 1;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-
-    .back {
-        width: 26rem;
-        margin-top: auto;
-    }
 }

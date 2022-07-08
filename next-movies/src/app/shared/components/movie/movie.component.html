@@ -1,14 +1,50 @@
-<div *ngFor="let m of movies" class="movie">
-    <div class="img">
-        <img src="{{m.image}}" alt="{{m.title}}">
-    </div>
-    <div class="title row-ellipsis">{{m.title}} ({{m.released}})</div>
-    <div class="rating">
-        <i class="nxt-icon star"></i>
-        <div class="score">{{m.rating}}</div>
-    </div>
-    <button class="nxt-btn outline read-more" (click)="displayMovieInfo(m)">
-        <span>read more</span>
-        <i class="nxt-icon arrow"></i>
-    </button>
-</div>
+<ng-container [ngSwitch]="display">
+    <ng-container *ngSwitchCase="MovieDisplay.Popup">
+        <ng-container *ngTemplateOutlet="popup"></ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="MovieDisplay.ListItem">
+        <ng-container *ngTemplateOutlet="listView"></ng-container>
+    </ng-container>
+
+    <!--  POPUP  -->
+    <ng-template #popup>
+        <div class="movie popup">
+            <div class="img">
+                <img src="{{movie?.largeimage}}" alt="{{movie?.title}}">
+            </div>
+
+            <div class="info">
+                <h2 class="title">{{movie?.title}}</h2>
+                <div class="duration">{{movie?.runtime}}</div>
+                <div class="rating">
+                    <i class="nxt-icon star"></i>
+                    <div class="score">{{movie?.rating}}/10</div>
+                </div>
+                <div class="synopsis" [innerHTML]="movie?.synopsis"></div>
+                <button class="nxt-btn outline back" (click)="close()">
+                    <i class="nxt-icon arrow left"></i>
+                    <span>Back to list</span>
+                </button>
+            </div>
+        </div>
+    </ng-template>
+
+    <!--  LIST ITEM  -->
+    <ng-template #listView>
+        <div class="movie listView">
+            <div class="img">
+                <img src="{{movie?.image}}" alt="{{movie?.title}}">
+            </div>
+            <div class="title row-ellipsis">{{movie?.title}} ({{movie?.released}})</div>
+            <div class="rating">
+                <i class="nxt-icon star"></i>
+                <div class="score">{{movie?.rating || 'N/A'}}</div>
+            </div>
+            <button class="nxt-btn outline read-more" (click)="displayMovieInfo(movie)">
+                <span>read more</span>
+                <i class="nxt-icon arrow"></i>
+            </button>
+        </div>
+    </ng-template>
+</ng-container>

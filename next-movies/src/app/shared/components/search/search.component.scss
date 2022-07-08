@@ -14,7 +14,7 @@
 
     .search {
         position: absolute;
-        right: $padding;
+        right: $padding + 1;
         top: 50%;
         transform: translate(50%, -50%);
         cursor: default;

@@ -1,45 +1,100 @@
 @import "./src/styles/partials/globals.scss";
 @import "./src/styles/partials/placeholders.scss";
+@import "./src/styles/partials/animations.scss";
 
 :host {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 260px);
-    grid-row-gap: 94px;
-    grid-column-gap: 15px;
-    justify-content: center;
+    display: flex;
 
     .movie {
         display: flex;
-        flex-direction: column;
 
-        .img {
-            height: 385px;
-            @extend %img-spread;
+        &.listView {
+            flex-direction: column;
+
+            &:hover .img {
+                @include animation-pop();
+            }
+
+            .img {
+                transition: $anim-transition;
+                height: 385px;
+                @extend %img-spread;
+            }
+
+            .title {
+                margin-top: 2rem;
+                font-size: 3rem;
+                font-family: $font-family-2;
+                line-height: 3.1rem;
+                margin-bottom: auto;
+            }
+
+            .rating {
+                @extend %rating;
+                margin-top: 2rem;
+            }
+
+            .read-more {
+                height: 4.2rem;
+                margin-top: 1.9rem;
+                font-size: 1.8rem;
+                font-family: $font-family-1;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-left: auto;
+                }
+            }
         }
 
-        .title {
-            margin-top: 2rem;
-            font-size: 3rem;
-            font-family: $font-family-2;
-            line-height: 3.1rem;
-            margin-bottom: auto;
-        }
+        &.popup {
+            .info {
+                margin-left: 14.3rem;
+                display: flex;
+                flex-direction: column;
+            }
 
-        .rating {
-            @extend %rating;
-            margin-top: 2rem;
-        }
+            .img {
+                width: 100%;
+                height: 59rem;
+                min-width: 40rem;
 
-        .read-more {
-            height: 4.2rem;
-            margin-top: 1.9rem;
-            font-size: 1.8rem;
-            font-family: $font-family-1;
-            display: flex;
-            align-items: center;
+                @extend %img-spread;
+            }
 
-            i {
-                margin-left: auto;
+            .title {
+                text-transform: uppercase;
+                font-size: 4.5rem;
+            }
+
+            .duration {
+                margin-top: 1rem;
+                font-size: 2.5rem;
+            }
+
+            .rating {
+                @extend %rating;
+                margin-top: 2.4rem;
+            }
+
+            .score {
+                margin-left: 0.3rem;
+                font-size: 2.5rem;
+            }
+
+            .synopsis {
+                margin: 2.8rem 0;
+                font-size: 3rem;
+                font-family: $font-family-2;
+                flex-grow: 1;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            .back {
+                width: 26rem;
+                margin-top: auto;
             }
         }
     }

@@ -20,6 +20,11 @@
     .movies-list {
         width: 100%;
         height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 260px);
+        grid-row-gap: 94px;
+        grid-column-gap: 15px;
+        justify-content: center;
         padding: 9.5rem 0;
     }
 }

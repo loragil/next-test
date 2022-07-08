@@ -52,17 +52,12 @@ router-outlet + * > div:first-child {
     align-items: center;
     justify-content: space-between;
     font-size: 1.8rem;
-    transition: $anim-transition;
 
     &.outline {
         border: 1px solid $color-black;
         background-color: transparent;
         border-radius: 100px;
         padding: 0 1.9rem;
-    }
-
-    &:hover {
-        @include animation-pop();
     }
 }
 

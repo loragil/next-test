@@ -7,6 +7,7 @@ import {MovieService} from "../../shared/services/movie.service";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs";
+import { MovieDisplay } from 'src/app/shared/components/movie/movie.component';
 
 @Component({
     selector: 'app-home',
@@ -15,8 +16,8 @@ import {Subscription} from "rxjs";
 })
 export class HomeComponent implements OnInit, OnDestroy {
     modalRef?: BsModalRef;
-    movies: Movie[] = [];
     subs: Subscription[] = [];
+    MovieDisplay = MovieDisplay;
 
     constructor(public movieService: MovieService,
                 private http: HttpClient,
@@ -26,7 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.setMoviesSource();
         this.checkForMovieInURL();
     }
 
@@ -54,9 +54,5 @@ export class HomeComponent implements OnInit, OnDestroy {
                     });
             }
         }));
-    }
-
-    private setMoviesSource() {
-        this.subs.push(this.movieService.movies$.subscribe(movies => this.movies = movies));
     }
 }
