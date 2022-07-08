@@ -4,21 +4,8 @@
         Movies and tv shows
     </h1>
 
-    <div class="movies-list" *ngIf="(movieService.movies$ | async)?.length; else noResults">
-        <div *ngFor="let m of movieService.movies$ | async" class="movie">
-            <div class="img">
-                <img src="{{m.image}}" alt="{{m.title}}">
-            </div>
-            <div class="title row-ellipsis">{{m.title}} ({{m.released}})</div>
-            <div class="rating">
-                <i class="nxt-icon star"></i>
-                <div class="score">{{m.rating}}</div>
-            </div>
-            <button class="nxt-btn outline read-more" (click)="displayMovieInfo(m)">
-                <span>read more</span>
-                <i class="nxt-icon arrow"></i>
-            </button>
-        </div>
+    <div class="movies-list" *ngIf="movies.length; else noResults">
+        <app-movie [movies]="movies"></app-movie>
     </div>
 
     <ng-template #noResults>
