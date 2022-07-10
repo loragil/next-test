@@ -1,3 +1,5 @@
+@import "globals";
+
 @mixin row-ellipsis($row-limit: 3) {
     display: -webkit-box;
     -webkit-line-clamp: $row-limit;
@@ -11,4 +13,17 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+
+@mixin breakpoint($bp1: "", $bp2: $app-mobile-bp) {
+    @if $bp1 != "" {
+        @media (min-width: $bp1) and (max-width: $bp2) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $bp2){
+            @content;
+        }
+    }
 }

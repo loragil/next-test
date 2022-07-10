@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
                     .subscribe((movies: Movie[]) => {
                         const movie = movies.shift();
                         if (movie) {
+                            movie.runtime = movie.runtime.replace(/h+/g, 'h ');
                             this.movieService.selectedMovie$?.next(movie);
                             this.modalRef = this.modalService.show(MovieInfoPopupComponent, ngbModalOptions);
                             this.modalRef.content.movie = movie;

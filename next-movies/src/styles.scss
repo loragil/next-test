@@ -8,9 +8,9 @@
 @import "./styles/partials/_globals.scss";
 @import "./styles/partials/_colors.scss";
 @import "./styles/partials/_icons.scss";
- @import "./styles/partials/_animations.scss";
- @import "./styles/partials/_utils.scss";
- @import "./styles/partials/_overrides.scss";
+@import "./styles/partials/_animations.scss";
+@import "./styles/partials/_utils.scss";
+@import "./styles/partials/_overrides.scss";
 
 html,
 body {
@@ -21,22 +21,29 @@ body {
     color: $text-color;
     overflow-x: hidden;
 
-    a {
-        color: inherit;
-    }
+a {
+    color: inherit;
+}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0
+}
+
 }
 
 router-outlet + * > div:first-child {
-    padding: 0 $app-padding;
+    --padding: 0 $app-padding;
+
+    @include breakpoint() {
+        --padding: 0 $app-mobile-padding;
+    }
+
+    padding: var(--padding);
 }
 
 /** NEXT APP STYLES **/
@@ -75,4 +82,10 @@ router-outlet + * > div:first-child {
     place-content: center;
     margin-top: 7.5rem;
     @include animation-fade();
+
+    @include breakpoint() {
+        padding: 0 1rem;
+        font-size: 1.8rem;
+        margin-top: 4rem;
+    }
 }

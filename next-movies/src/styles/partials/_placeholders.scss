@@ -1,4 +1,5 @@
 @import "globals";
+@import "utils";
 
 %rating {
     display: flex;
@@ -14,6 +15,11 @@
     .star {
         width: 2.8rem;
         height: 2.7rem;
+
+        @include breakpoint() {
+            width: 2.3rem;
+            height: 2.2rem;
+        }
     }
 }
 

@@ -1,6 +1,14 @@
+@import "./src/styles/partials/utils";
+
 .app-movie-info-popup {
     min-width: 136rem;
     height: 69rem;
     padding: 5rem 14rem;
     display: flex;
+
+    @include breakpoint() {
+        height: 67.1rem;
+        min-width: unset;
+        padding: 1.8rem 1.9rem;
+    }
 }

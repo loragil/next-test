@@ -1,6 +1,6 @@
 @import "./src/styles/partials/globals.scss";
 @import "./src/styles/partials/colors.scss";
-
+@import "./src/styles/partials/utils.scss";
 
 :host {
     display: grid;
@@ -8,7 +8,11 @@
     grid-template-areas: 'header'
     'content'
     'footer';
-    grid-template-rows: 12.3rem 1fr 30rem;
+    grid-template-rows: $app-header-height 1fr 30rem;
+
+    @include breakpoint() {
+        grid-template-rows: $app-mobile-header-height 1fr 30rem;
+    }
 }
 
 /* HEADER */
@@ -19,9 +23,19 @@ header {
     display: flex;
     align-items: center;
 
+    @include breakpoint() {
+        padding: 0 1rem;
+        position: relative;
+    }
+
     .logo img {
         width: 260px;
         height: 81px;
+
+        @include breakpoint() {
+            width: 158px;
+            height: 50px;
+        }
     }
 
     .search-wrapper {
@@ -34,7 +48,11 @@ header {
 .content {
     grid-area: content;
     height: 100%;
-    // min-height: 170.8rem;
+    max-height: 170.8rem;
+
+    @include breakpoint() {
+        max-width: $app-mobile-bp;
+    }
 }
 
 /* FOOTER */
@@ -47,6 +65,10 @@ footer {
     padding-top: 4rem;
     background-color: $color-dark-gray;
     color: $color-white;
+
+    @include breakpoint() {
+        max-width: $app-mobile-bp;
+    }
 
     .logo {
         width: 40px;

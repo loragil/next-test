@@ -1,3 +1,6 @@
+@import "./src/styles/partials/globals";
+@import "./src/styles/partials/utils";
+
 :host {
     $padding: 2.5rem;
 
@@ -5,19 +8,37 @@
     width: 100%;
     height: 100%;
 
+    @include breakpoint() {
+        $padding: 1rem;
+
+        position: absolute;
+        top: $app-mobile-header-height + $padding;
+        left: 1rem;
+        max-width: 355px;
+    }
+
     input {
         border-radius: 30px;
         padding-left: $padding;
         padding-right: calc(#{$padding} * 2);
         height: 5rem;
+
+        @include breakpoint() {
+            padding-right: calc(#{$padding} * 4);
+        }
     }
 
     .search {
         position: absolute;
-        right: $padding + 1;
+        right: 3.5rem;
         top: 50%;
         transform: translate(50%, -50%);
         cursor: default;
+
+        @include breakpoint() {
+            transform: translate(50%, -100%);
+            right: 2.5rem
+        }
     }
 
     .total {
@@ -26,5 +47,9 @@
         font-size: 1.6rem;
         margin-top: 1rem;
         padding-left: $padding;
+
+        @include breakpoint() {
+            bottom: 0;
+        }
     }
 }
